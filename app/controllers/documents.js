@@ -15,7 +15,7 @@
         app.use('/api', router);
         
        //below code is to get api
-        router.get('/documents', function (req, res, next){
+        router.get('/docs', function (req, res, next){
         console.log('Get all documents', 'verbose');
         var query = Newdoc.find().then(result => {
         if(result && result.length) {
@@ -32,7 +32,7 @@
     
       
     //below code is to post api
-        router.post('/documents', function(req, res, next){
+        router.post('/docs', function(req, res, next){
             console.log('Create document'  , 'verbose');
             var newdoc = new Newdoc(req.body);
             newdoc.save()
