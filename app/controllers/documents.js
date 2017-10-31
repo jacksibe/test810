@@ -16,29 +16,17 @@
         
        //below code is to get api
         router.get('/documents', function (req, res, next){
-            
         console.log('Get all documents', 'verbose');
-            
         var query = Newdoc.find().then(result => {
-            
         if(result && result.length) {
-            
         res.status(200).json(result);
-            
         } else {
-            
         res.status(404).json({message: "No documents"});
-            
         }
-            
         })
-            
         .catch(err => {
-            
         return next(err);
-            
         });
-            
         });
     
     
