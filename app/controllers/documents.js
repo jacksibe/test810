@@ -1,18 +1,20 @@
 
     
-    
+    // load required modules
     var express = require('express'),
       router = express.Router(),
       mongoose = require('mongoose'),
-      Newdoc = mongoose.model('documents');
+      Newdoc = mongoose.model('docs');
       
     
     
     
     module.exports = function (app, config) {
+
+        
         app.use('/api', router);
         
-       
+       //below code is to get api
         router.get('/documents', function (req, res, next){
             
         console.log('Get all documents', 'verbose');
@@ -41,7 +43,7 @@
     
     
       
-    
+    //below code is to post api
         router.post('/documents', function(req, res, next){
             console.log('Create document'  , 'verbose');
             var newdoc = new Newdoc(req.body);

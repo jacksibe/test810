@@ -1,20 +1,16 @@
+
+//load modules 
 var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
-
+//define schema 
 var documentSchema = new Schema({
 
-    firstName: { type: String, required: true }, // first name required
-    lastName: { type: String, required: true }, // last name required 
-    Status: {type: Boolean, default: true}, // status with default true
-    email: {type: String, required: true, unique: true},
-    password: { type: String, required: true },
-    dateRegistered: {type: Date, default: Date.now },
+    firstName: { type: String, required: true }, //using the name attribute for string
+    age: { type: Number, min: 16, max: 60}, // using the age attribute for number
 
-
-    
-      
-    
+ 
 });
 
+
 module.exports = 
- Mongoose.model('documents', documentSchema);
+ Mongoose.model('docs', documentSchema);
